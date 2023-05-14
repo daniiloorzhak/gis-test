@@ -1,0 +1,7 @@
+rootProject.name = 'gis-test'
+
+includeBuild 'gateway-proxy'
+includeBuild 'eureka-server'
+includeBuild 'config-server'
+includeBuild 'auth-service'
+includeBuild 'record-service'
