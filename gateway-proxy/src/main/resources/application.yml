@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: "gateway-proxy"
+  profiles:
+    active: "development"
+  config:
+    import: "optional:configserver:http://localhost:8888/"
+server:
+  port: 0
