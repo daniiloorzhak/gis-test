@@ -1,4 +1,4 @@
-CREATE TABLE record
+CREATE TABLE records
 (
     id      serial PRIMARY KEY,
     user_id BIGINT       NOT NULL,

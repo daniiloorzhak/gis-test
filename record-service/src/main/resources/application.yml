@@ -1,9 +1,9 @@
 spring:
   application:
-    name: "record-service"
+    name: 'record-service'
   profiles:
-    active: "development"
+    active: 'development'
   config:
-    import: "optional:configserver:http://localhost:8888/"
+    import: 'optional:configserver:http://localhost:8888/'
 server:
   port: 0

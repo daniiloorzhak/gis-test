@@ -10,8 +10,8 @@ public class GatewayProxyConfig {
     @Bean
     RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("auth-service", r -> r.path("auth/**").uri("lb://auth-service"))
-                .route("record-service", r -> r.path("record/**").uri("lb://eclient"))
+                .route("auth-service", r -> r.path("/auth/**").uri("lb://auth-service"))
+                .route("record-service", r -> r.path("/record/**").uri("lb://record-service"))
                 .build();
     }
 }

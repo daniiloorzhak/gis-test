@@ -1,9 +1,9 @@
 spring:
   application:
-    name: "gateway-proxy"
+    name: 'gateway-proxy'
   profiles:
-    active: "development"
+    active: 'development'
   config:
-    import: "optional:configserver:http://localhost:8888/"
+    import: 'optional:configserver:http://localhost:8888/'
 server:
-  port: 0
+  port: 8081

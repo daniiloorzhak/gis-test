@@ -11,18 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @EnableEurekaServer
-@RestController
-@RequestMapping("hello")
 public class EurekaServerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EurekaServerApplication.class, args);
-	}
-
-	@Value("${eureka.client.service-url.defaultZone}")
-	private String zone;
-
-	@GetMapping
-	public ResponseEntity<?> helloWorld() {
-		return ResponseEntity.ok(zone);
 	}
 }

@@ -33,7 +33,7 @@ public class AuthController {
 
     @GetMapping
     public ResponseEntity<Long> getUserIdFromSession(@CookieValue(value = "session-id") @NotBlank String sessionId) {
-        return null;
+        return ResponseEntity.ok(userService.getUserIdBySessionId(sessionId));
     }
 
     @GetMapping("/hello")

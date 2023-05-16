@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public String login(UserDTO userDTO) {
         User user = userRepository.findByLogin(userDTO.getLogin()).blockOptional().orElseThrow();
-        if (Objects.equals(userDTO.getPassword(), user.getPassword())) {
+        if (!Objects.equals(userDTO.getPassword(), user.getPassword())) {
             throw new UserNotFoundException();
         }
 
@@ -45,6 +45,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public Mono<User> save(UserDTO userDTO) {
         return userRepository.save(mapDTO(userDTO));
+    }
+
+    @Override
+    public Long getUserIdBySessionId(String sessionId) {
+        return sessionRepository.findById(sessionId).orElseThrow().getUserId();
     }
 
     private User mapDTO(UserDTO userDTO) {
