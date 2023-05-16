@@ -1,0 +1,25 @@
+version: '3'
+services:
+  postgres_auth:
+    image: 'postgres'
+    container_name: 'postgres_auth'
+    environment:
+      POSTGRES_DB: 'postgres'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+    ports:
+      - '54322:5432'
+  postgres_record:
+    image: 'postgres'
+    container_name: 'postgres_record'
+    environment:
+      POSTGRES_DB: 'postgres'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+    ports:
+      - '54321:5432'
+  redis:
+    image: 'redis'
+    container_name: 'redis'
+    ports:
+      - '6379:6379'
